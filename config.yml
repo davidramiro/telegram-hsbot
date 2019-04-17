@@ -1,0 +1,54 @@
+keys:
+     telegram_token: YOUR-TOKEN-HERE
+
+general:
+     # add a small delay before starting the script, recommended for daemons like systemd
+     use_systemd_delay: false
+
+     use_proxy:
+        enabled: false
+        proxy_url: YOUR-PROXY-URL-HERE
+
+features:
+    describe:
+        commands:
+            - describe
+            - beschreib
+        tmp_path: ./data/tmp/describe/
+
+    dynamic_reply:
+        use_command_handler: false
+        use_message_handler: true
+        commands:
+            - sometext
+            - someothertest
+        path: ./data/dyn_reply/
+
+    rand_image:
+        use_command_handler: false
+        use_message_handler: true
+        commands:
+            - somecommand
+            - someothercommand
+        path: ./data/img/
+        # use subdirectories corresponding to the command used
+        command_subfolder: true
+
+    rate:
+        ratings:
+            - 0/10
+            - 10/10
+            - pathetic
+            - amazing
+        commands:
+            - rate
+    tts:
+        commands:
+            - say
+        language: ru
+        path: ./data/tmp/tts/
+
+    voice_reply:
+        commands:
+            - hello
+        file: ./data/audio/sample.mp3

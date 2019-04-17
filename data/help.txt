@@ -1,0 +1,7 @@
+This is what your bot outputs on /help.
+
+e.g.:
+/rate - rate your stuff
+/say *text* (or reply) - google tts
+/describe *reply to image* - describe an image
+
