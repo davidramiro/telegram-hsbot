@@ -11,7 +11,7 @@ A silly Telegram bot for groups written in Python. This is an early WIP with onl
 - [gTTS](https://github.com/pndurette/gTTS)
 
 ## Usage
- - `pip3 install install -r requirements.txt`
+ - `sudo pip3 install -r requirements.txt`
  - Add your bot token to `config.yml`
  - Adjust the config to your needs
  - Add content to the `/data/` folder

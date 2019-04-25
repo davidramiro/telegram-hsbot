@@ -26,7 +26,7 @@ def reply_caption(update, context: CallbackContext):
     update.message.chat.send_action(ChatAction.TYPING)
     with open("config.yml", "r") as f:
         config = yaml.load(f, Loader=yaml.FullLoader)
-    path = config["features"]["describe"]["path"]
+    path = config["features"]["describe"]["tmp_path"]
     output = os.path.join(path, filename)
     reply = update.message.reply_to_message
     if reply is None:
