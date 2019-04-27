@@ -28,7 +28,6 @@ def reply_tts(update, context: CallbackContext):
     if len(text) == 0:
         update.message.reply_text("Type in some text.")
         return
-    lang = "ru"
     tts = gTTS(text, lang)
     tts.save(path + filename + ".mp3")
     with open(path + filename + ".mp3", "rb") as speech:

@@ -10,6 +10,13 @@ general:
         proxy_url: YOUR-PROXY-URL-HERE
 
 features:
+    count:
+        # count messages and check for repdigits.
+        keywords:
+            - keyword_one
+            - keyword_two
+            - keyword_three
+            
     describe:
         commands:
             - describe

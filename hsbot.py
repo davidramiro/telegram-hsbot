@@ -13,6 +13,9 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 
 logger = logging.getLogger(__name__)
 
+count_keywords = []
+keyword_list = []
+
 
 def start(update, context):
     """
@@ -59,6 +62,22 @@ def message_parser(update, context):
         if voice_keyword in update.message.text.lower():
             voice_reply.reply(update, context)
 
+    for keyword in count_keywords:
+        if keyword in update.message.text.lower():
+            init_occurences = update.message.text.lower().count(keyword)
+            for n in range(0, init_occurences):
+                keyword_list.append(keyword)
+                occurences = keyword_list.count(keyword)
+                occur_str = str(occurences)
+                if len(occur_str) > 1:
+                    for j in range (0, 9):
+                        number_times = int(occur_str.count(str(j)))
+                        str_length = len(occur_str)
+                        if number_times == str_length:
+                            update.message.reply_text("*" + keyword + "*" + \
+                            " count: " + str(occurences) + ".\n_Repdigit!_"\
+                            , quote=True, parse_mode='Markdown')
+
 
 def main():
     # Parse config
@@ -67,6 +86,8 @@ def main():
         config = yaml.load(f, Loader=yaml.FullLoader)
     key = config["keys"]["telegram_token"]
     use_proxy = config["general"]["use_proxy"]["enabled"]
+    for keyword in config["features"]["count"]["keywords"]:
+        count_keywords.append(keyword)
     if use_proxy is True:
         proxy_url = config["general"]["use_proxy"]["proxy_url"]
     systemd_delay = config["general"]["use_systemd_delay"]
