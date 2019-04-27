@@ -6,6 +6,7 @@ from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters)
 from telegram import ChatAction
 import yaml
 from modules import voice_reply, dynamic_reply, rate, describe, tts, rand_image
+from wip import scale
 
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -128,6 +129,8 @@ def main():
 
     for command in config["features"]["tts"]["commands"]:
         dp.add_handler(CommandHandler(command, tts.reply_tts))
+
+    dp.add_handler(CommandHandler('scale', scale.liquid))
 
     # Send text messages to the parser
     dp.add_handler(MessageHandler(Filters.text, message_parser))
