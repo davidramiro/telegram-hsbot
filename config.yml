@@ -51,8 +51,9 @@ features:
             - rate
 
     scale:
-        tmp_path:
-            ./data/tmp/liq/
+        # maximum width/height for the scaled image
+        size: 800
+        tmp_path: ./data/tmp/liq/
 
     tts:
         commands:
