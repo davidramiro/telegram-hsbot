@@ -16,7 +16,7 @@ features:
             - keyword_one
             - keyword_two
             - keyword_three
-            
+
     describe:
         commands:
             - describe
@@ -49,11 +49,16 @@ features:
             - amazing
         commands:
             - rate
+
+    scale:
+        tmp_path:
+            ./data/tmp/liq/
+
     tts:
         commands:
             - say
         language: ru
-        path: ./data/tmp/tts/
+        tmp_path: ./data/tmp/tts/
 
     voice_reply:
         commands:

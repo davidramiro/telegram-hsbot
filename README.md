@@ -17,6 +17,7 @@ A silly Telegram bot for groups written in Python. This is an early WIP with onl
  - Add your bot token to `config.yml`
  - Adjust the config to your needs
  - Add content to the `/data/` folder
+ - Make sure the current user has write access to the `tmp_path` locations with `chown` and/or `chmod`
  - Start the bot: `python3 hsbot.py`
 
 ### Features:
@@ -30,6 +31,6 @@ A silly Telegram bot for groups written in Python. This is an early WIP with onl
   - `voice_reply`: Listen for certain keywords and reply with a voice message
 
 ### Todo:
-- [x] `scale` - Context aware scaling of images - currently WIP, expect some bugs
+- [x] `scale` - Context aware scaling of images - WIP, doesn't work with stickers yet
 - [ ] `glitch` - Glich jpg and png images
 - [x] `count` - Listen for & count specific keywords, print out messages on certain milestones (currently using repdigits as milestones)

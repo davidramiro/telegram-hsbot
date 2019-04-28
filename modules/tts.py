@@ -17,7 +17,7 @@ def reply_tts(update, context: CallbackContext):
     with open("config.yml", "r") as f:
         config = yaml.load(f, Loader=yaml.FullLoader)
     lang = config["features"]["tts"]["language"]
-    path = config["features"]["tts"]["path"]
+    path = config["features"]["tts"]["tmp_path"]
     reply = update.message.reply_to_message
     if reply is None:
         text = "".join(context.args)
