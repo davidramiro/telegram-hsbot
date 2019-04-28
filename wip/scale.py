@@ -16,10 +16,11 @@ def liquid(update, context: CallbackContext):
     """
     Rescale an image using liquid rescale (also known as content aware scale)
     """
-    # get temp directory from config
+    # get temp directory and size from config
     with open("config.yml", "r") as f:
         config = yaml.load(f, Loader=yaml.FullLoader)
     path = config["features"]["scale"]["tmp_path"]
+    scale_res = config["features"]["scale"]["size"]
     current_time = datetime.strftime(datetime.now(), "%d.%m.%Y %H:%M:%S")
     filename = datetime.now().strftime("%d%m%y-%H%M%S%f")
 
@@ -74,7 +75,8 @@ def liquid(update, context: CallbackContext):
     size = str(100 - (power / 1.3))
     absolute_path = os.path.abspath(path)
     x = "convert " + absolute_path + "/" + filename + extension + " -liquid-rescale " + \
-         size + "%x" + size + "% -resize 1000x1000 " + absolute_path + "/" + filename + "-liq.jpg"
+         size + "%x" + size + "% -resize " + scale_res + "x" + scale_res + " " + \
+         absolute_path + "/" + filename + "-liq.jpg"
     subprocess.run(x, shell=True)
 
     # TODO: handle mp4
