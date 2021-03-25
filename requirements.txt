@@ -1,6 +1,6 @@
 python_telegram_bot==12.8
 gTTS==2.0.3
-PyYAML==5.1
+PyYAML==5.4
 telegram==0.0.1
 requests==2.21.0
 face_recognition
