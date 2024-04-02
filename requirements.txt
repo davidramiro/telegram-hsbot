@@ -2,7 +2,7 @@ python_telegram_bot==12.8
 gTTS==2.0.3
 PyYAML==5.4
 telegram==0.0.1
-requests==2.21.0
+requests==2.31.0
 face_recognition
 beautifulsoup4==4.7.1
 certifi==2023.7.22
