@@ -5,7 +5,7 @@ telegram==0.0.1
 requests==2.31.0
 face_recognition
 beautifulsoup4==4.7.1
-certifi==2023.7.22
+certifi==2024.7.4
 chardet==3.0.4
 future==0.18.3
 idna==3.7
